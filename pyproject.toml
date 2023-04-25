@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "nonebot-yin-yang"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "nonebot_yin_yang"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+nb-cli = "^1.1.2"
+nonebot = "^1.9.1"
+nonebot2 = {extras = ["fastapi"], version = "^2.0.0rc4"}
+nonebot-adapter-onebot = "^2.2.2"
+
+[tool.nonebot]
+plugins = []
+plugin_dirs = ["src/plugins"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
