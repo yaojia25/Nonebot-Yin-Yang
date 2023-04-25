@@ -7,18 +7,16 @@
 @Description: 
 """
 from nonebot import on_keyword
-from nonebot.adapters.onebot.v11 import Event, MessageSegment
-
-check_word = {'羡慕', '真强', }
+from nonebot.adapters.onebot.v11 import Event, MessageSegment,Message,GroupMessageEvent
 
 
 def _check_group(event: Event) -> bool:
     return event.get_type == 'group'
 
 
-envy = on_keyword({"羡慕"}, rule=_check_group)
+envy = on_keyword({"羡慕"})
 
 
 @envy.handle()
-async def _(event: Event):
-    await envy.finish(MessageSegment("这值得你羡慕"))
+async def _(event: GroupMessageEvent):
+    await envy.finish(MessageSegment.at(event.user_id) + Message("这值得你羡慕！"))

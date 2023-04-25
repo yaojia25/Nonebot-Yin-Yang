@@ -18,7 +18,7 @@ driver = nonebot.get_driver()
 driver.register_adapter(ONEBOT_V11Adapter)
 
 # 在这里加载插件
-nonebot.load_from_json("pyproject.toml")
+nonebot.load_from_toml("pyproject.toml")
 
 if __name__ == "__main__":
     nonebot.run()
