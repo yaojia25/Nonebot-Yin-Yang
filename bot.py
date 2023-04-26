@@ -9,7 +9,6 @@
 import nonebot
 from nonebot.adapters.onebot.v11 import Adapter as ONEBOT_V11Adapter
 
-
 # 初始化 NoneBot
 nonebot.init()
 
